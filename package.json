@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ES6",
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "name": "proyecto",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "main": "main.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  },
+  "description": "---\r w4d4: Canvas-Car-I\r date: 02/02/2023\r ---",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "esbuild": "^0.16.17",
+    "function-bind": "^1.1.1",
+    "is-core-module": "^2.11.0",
+    "has": "^1.0.3",
+    "picocolors": "^1.0.0",
+    "resolve": "^1.22.1",
+    "path-parse": "^1.0.7",
+    "rollup": "^3.12.1",
+    "postcss": "^8.4.21",
+    "nanoid": "^3.3.4",
+    "supports-preserve-symlinks-flag": "^1.0.0",
+    "source-map-js": "^1.0.2"
+  }
+}
