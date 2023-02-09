@@ -5,22 +5,22 @@ date: 02/02/2023
 
 ![](https://brand.corecode.school/logos/logo_core_wide.svg)
 
-# Canvas-Car-I
+# Llab Nogard
 
 ## Configuración Typescript
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es2016",
-        "module": "ES6",
-        "rootDir": "src",
-        "outDir": "build",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "skipLibCheck": true
-    }
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "ES6",
+    "rootDir": "src",
+    "outDir": "build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
 }
 ```
 
