@@ -1,1 +1,1 @@
-export const converAngleToRad = (angle: number) => (angle * Math.PI) / 180;
+export const convertAngleToRad = (angle: number) => (angle * Math.PI) / 180;
