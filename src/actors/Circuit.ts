@@ -1,11 +1,11 @@
 import { Point } from "../types/Point";
 import { Actor } from "./Actor";
 import { Barrier } from "./Barrier";
-import { Car } from "./Car";
+import { Gohan } from "./Gohan";
 
 interface InitialCircuitProps {
   position?: Point;
-  car: Car;
+  player: Gohan;
   linkedBarrier?: Barrier;
 }
 
@@ -13,13 +13,13 @@ export class Circuit extends Actor {
   //Atributos
   barriers: Barrier[] = [];
   completed: boolean = false;
-  car: Car;
+  player: Gohan;
   nextBarrierToTouch?: number = 1;
   currentBarrierTouching?: number = undefined;
 
   constructor(props: InitialCircuitProps) {
     super({ x: 800, y: 800 });
-    this.car = props.car;
+    this.player = props.player;
     let barrier: Barrier | undefined;
 
     for (let i = 20; i > 0; i--) {
@@ -29,11 +29,13 @@ export class Circuit extends Actor {
           y: Math.random() * (500 - 100) + 100,
         },
         angle: 0,
-        car: props.car,
+        player: props.player,
         linkedBarrier: barrier,
+        size: { w: 70, h: 70 },
       });
 
       this.barriers.push(barrier);
+      console.log(barrier, "creado");
     }
   }
 
@@ -69,7 +71,7 @@ export class Circuit extends Actor {
       this.nextBarrierToTouch != this.currentBarrierTouching + 1
     ) {
       this.currentBarrierTouching = undefined;
-      this.car.restart();
+      this.player.restart();
       this.barriers.forEach((barrier) => barrier.restart());
     }
   }

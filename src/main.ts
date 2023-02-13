@@ -3,7 +3,7 @@ import { Circuit } from "./actors/Circuit";
 import { canvas, canvasMid, ctx } from "./utils/getCanvas";
 import { Actor } from "./actors/Actor";
 import { FPSViewer } from "./actors/FPSViewer";
-import { Car } from "./actors/Car";
+
 import { Timer } from "./actors/Timer";
 
 import { Gohan } from "./actors/Gohan";
@@ -11,25 +11,24 @@ import { BackgroundImage } from "./actors/BackgroundImage";
 
 window.onload = () => {
   // Actors
-  const player = new Car({
-    position: { x: canvasMid.x, y: 400 },
-    size: { w: 100, h: 40 },
-    speed: 10,
-    angle: -90,
-  });
-
-  const circuit = new Circuit({ car: player });
-
-  const fps = new FPSViewer();
-
-  const timer = new Timer({ position: { x: canvasMid.x - 50, y: 35 } });
-
+  // const player = new Car({
+  //   position: { x: canvasMid.x, y: 400 },
+  //   size: { w: 100, h: 40 },
+  //   speed: 10,
+  //   angle: -90,
+  // });
   const gohan = new Gohan({
     position: { x: 200, y: 200 },
     size: { w: 100, h: 100 },
     maxSpeed: 5,
     angle: -90,
   });
+
+  const circuit = new Circuit({ player: gohan });
+
+  const fps = new FPSViewer();
+
+  const timer = new Timer({ position: { x: canvasMid.x - 50, y: 35 } });
 
   const music = new BackgroundMusic();
 
@@ -38,9 +37,6 @@ window.onload = () => {
   // Array de Actores que se van a dibujar en pantalla
   const actors: Actor[] = [
     fps,
-
-    player,
-
     gohan,
     timer,
     circuit,

@@ -26,9 +26,9 @@ export class Gohan extends Actor {
   image: HTMLImageElement;
   imagesPosition: number[];
   currentImagePosition: number;
+  currentYposition: number;
   timer: number;
   maxSpeed: number;
-  imageRight: number[];
 
   constructor(props: InitialGohanProps) {
     // Posición inicial del Gohan
@@ -40,10 +40,10 @@ export class Gohan extends Actor {
     this.maxSpeed = props.maxSpeed;
     this.initialPosition = props.position;
     this.image = new Image();
-    this.image.src = imagesSrc + "ssss.png";
-    this.imagesPosition = [0];
+    this.image.src = imagesSrc + "sprites1.png";
+    this.imagesPosition = [0, 1, 2, 3, 4, 5];
     this.currentImagePosition = 0;
-    this.imageRight = [0, 1, 2];
+    this.currentYposition = 0;
     this.timer = 0;
   }
 
@@ -53,8 +53,8 @@ export class Gohan extends Actor {
 
     ctx.drawImage(
       this.image,
-      50 * this.imagesPosition[this.currentImagePosition],
-      0,
+      52 * this.imagesPosition[this.currentImagePosition],
+      this.currentYposition,
       50,
       60,
       -this.size.w / 2,
@@ -80,7 +80,7 @@ export class Gohan extends Actor {
 
     this.timer += delta;
 
-    if (this.timer >= 0.05) {
+    if (this.timer >= 0.1) {
       this.currentImagePosition = (this.currentImagePosition + 1) % 1;
       this.timer = 0;
     }
@@ -91,23 +91,65 @@ export class Gohan extends Actor {
       case "ArrowRight":
         this.speed.x = this.maxSpeed;
         this.speed.y = 0;
+        this.imagesPosition = [1];
 
         break;
       case "ArrowLeft":
         this.speed.x = -this.maxSpeed;
         this.speed.y = 0;
+        this.imagesPosition = [2];
         break;
       case "ArrowUp":
         this.speed.y = -this.maxSpeed;
         this.speed.x = 0;
+        this.imagesPosition = [3];
 
         break;
       case "ArrowDown":
         this.speed.y = this.maxSpeed;
         this.speed.x = 0;
+        this.imagesPosition = [4];
 
         break;
+      case " ":
+        this.imagesPosition = [5];
+        this.speed.y = 0;
+        this.speed.x = 0;
       default:
     }
   }
+
+  keyboardEventUp(key: string): void {
+    switch (key) {
+      case "ArrowRight":
+        this.speed.x = 0;
+        this.speed.y = 0;
+        this.imagesPosition = [0];
+
+        break;
+      case "ArrowLeft":
+        this.speed.x = 0;
+        this.speed.y = 0;
+        this.imagesPosition = [0];
+        break;
+      case "ArrowUp":
+        this.speed.x = 0;
+        this.speed.y = 0;
+        this.imagesPosition = [0];
+
+        break;
+      case "ArrowDown":
+        this.speed.x = 0;
+        this.speed.y = 0;
+        this.imagesPosition = [0];
+
+        break;
+      case " ":
+        this.imagesPosition = [0];
+        this.speed.y = 0;
+        this.speed.x = 0;
+    }
+  }
+
+  restart() {}
 }
