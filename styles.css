@@ -7,21 +7,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#4a99c4, white);
+  background: linear-gradient(#31637e, white);
 }
 
 #canvas {
   /* width: 500px;
     height: 500px; */
-  border: 5px solid #fb6942;
+  border: 5px solid #ac1400;
   border-radius: 10px;
-  background-color: #fff;
-  width: 90%;
+  background: linear-gradient(#f7be04, #c14a00);
+  width: 100%;
   max-height: 80%;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1200px) {
   #canvas {
-    width: 1000px;
+    width: 1300px;
   }
 }

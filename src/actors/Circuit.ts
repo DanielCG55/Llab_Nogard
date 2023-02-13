@@ -18,14 +18,15 @@ export class Circuit extends Actor {
   currentBarrierTouching?: number = undefined;
 
   constructor(props: InitialCircuitProps) {
-    super({ x: 800, y: 35 });
+    super({ x: 800, y: 800 });
     this.car = props.car;
     let barrier: Barrier | undefined;
-    for (let i = 5; i > 0; i--) {
+
+    for (let i = 20; i > 0; i--) {
       barrier = new Barrier({
         position: {
-          x: Math.random() * (100 - 10) + 10,
-          y: Math.random() * (100 - 10) + 10,
+          x: Math.random() * (1000 - 600) + 600,
+          y: Math.random() * (500 - 100) + 100,
         },
         angle: 0,
         car: props.car,

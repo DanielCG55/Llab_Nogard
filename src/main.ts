@@ -5,7 +5,7 @@ import { Actor } from "./actors/Actor";
 import { FPSViewer } from "./actors/FPSViewer";
 import { Car } from "./actors/Car";
 import { Timer } from "./actors/Timer";
-import { Pacman } from "./actors/Pacman";
+
 import { Gohan } from "./actors/Gohan";
 import { BackgroundImage } from "./actors/BackgroundImage";
 
@@ -25,15 +25,13 @@ window.onload = () => {
   const timer = new Timer({ position: { x: canvasMid.x - 50, y: 35 } });
 
   const gohan = new Gohan({
-    position: { x: 200, y: 500 },
+    position: { x: 200, y: 200 },
     size: { w: 100, h: 100 },
     maxSpeed: 5,
     angle: -90,
   });
 
   const music = new BackgroundMusic();
-
-  const pacman = new Pacman({ x: 100, y: 100 }, 50, "blue", 6);
 
   const img = new BackgroundImage();
 
@@ -42,7 +40,7 @@ window.onload = () => {
     fps,
 
     player,
-    pacman,
+
     gohan,
     timer,
     circuit,

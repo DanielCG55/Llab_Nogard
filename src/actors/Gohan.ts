@@ -1,7 +1,7 @@
 import { checkLimits } from "../utils/checkLimits";
 import { Point } from "../types/Point";
 import { Size } from "../types/Size";
-import { convertAngleToRad } from "../utils/convertAngleToRad";
+
 import { Actor } from "./Actor";
 
 interface InitialGohanProps {
@@ -28,6 +28,7 @@ export class Gohan extends Actor {
   currentImagePosition: number;
   timer: number;
   maxSpeed: number;
+  imageRight: number[];
 
   constructor(props: InitialGohanProps) {
     // Posición inicial del Gohan
@@ -35,13 +36,14 @@ export class Gohan extends Actor {
     // Dimensiones del Gohan
     this.size = props.size;
     this.color = props.color || "#d62828";
-    this.speed = { x: 10, y: 10 };
+    this.speed = { x: 0, y: 0 };
     this.maxSpeed = props.maxSpeed;
     this.initialPosition = props.position;
     this.image = new Image();
-    this.image.src = imagesSrc + "ekans.png";
-    this.imagesPosition = [0, 1, 2];
+    this.image.src = imagesSrc + "ssss.png";
+    this.imagesPosition = [0];
     this.currentImagePosition = 0;
+    this.imageRight = [0, 1, 2];
     this.timer = 0;
   }
 
@@ -49,14 +51,12 @@ export class Gohan extends Actor {
   draw(ctx: CanvasRenderingContext2D, delta: number): void {
     ctx.translate(this.position.x, this.position.y);
 
-    // Image
-
     ctx.drawImage(
       this.image,
       50 * this.imagesPosition[this.currentImagePosition],
+      0,
       50,
-      50,
-      50,
+      60,
       -this.size.w / 2,
       -this.size.h / 2,
       this.size.w,
@@ -81,7 +81,7 @@ export class Gohan extends Actor {
     this.timer += delta;
 
     if (this.timer >= 0.05) {
-      this.currentImagePosition = (this.currentImagePosition + 1) % 3;
+      this.currentImagePosition = (this.currentImagePosition + 1) % 1;
       this.timer = 0;
     }
   }
