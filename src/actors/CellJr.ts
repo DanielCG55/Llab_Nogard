@@ -5,18 +5,18 @@ import { Actor } from "./Actor";
 import { Size } from "../types/Size";
 import { Gohan } from "./Gohan";
 
-interface InitialBarrierProps {
+interface InitialCellJrProps {
   size: Size;
   position: Point;
   player: Gohan;
   color?: string;
   angle?: number;
-  linkedBarrier?: Barrier;
+  linkedCellJr?: CellJr;
 }
 
 const imagesSrc: string = "src/assets/img/";
 
-export class Barrier extends Actor {
+export class CellJr extends Actor {
   //Atributos
   size: Size;
 
@@ -24,22 +24,22 @@ export class Barrier extends Actor {
   player: Gohan;
   touched: boolean = false;
   thouching: boolean = false;
-  barrierLength: number = 35;
+  celljrLength: number = 35;
   angle: number = 0;
   distance?: number;
-  linkedBarrier?: Barrier;
+  linkedCellJr?: CellJr;
   initialPosition: Point;
   image: HTMLImageElement;
   // imagesPosition: number[];
   currentImagePosition: number;
 
-  constructor(props: InitialBarrierProps) {
+  constructor(props: InitialCellJrProps) {
     super(props.position);
     this.player = props.player;
     this.size = props.size;
     this.color = props.color || "blue";
     this.angle = props.angle || 0;
-    this.linkedBarrier = props.linkedBarrier;
+    this.linkedCellJr = props.linkedCellJr;
     this.initialPosition = props.position;
     this.image = new Image();
     this.image.src = imagesSrc + "celljr2.png";
@@ -53,10 +53,10 @@ export class Barrier extends Actor {
       { x: this.player.position.x, y: this.player.position.y }
     );
 
-    if (this.distance <= this.barrierLength) {
+    if (this.distance <= this.celljrLength) {
       this.thouching = true;
-      if (this.linkedBarrier) {
-        if (this.linkedBarrier.touched) {
+      if (this.linkedCellJr) {
+        if (this.linkedCellJr.touched) {
           this.touched = true;
         }
       } else {
