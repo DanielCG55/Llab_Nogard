@@ -64,11 +64,7 @@ export class Gohan extends Actor {
             this.size.h
         );
 
-        // Canvas rectangle
-        // ctx.fillStyle = this.color;
-        // ctx.fillRect(-this.size.w / 2, -this.size.h / 2, this.size.w, this.size.h);
-        // ctx.fillStyle = '#202020';
-        // ctx.fillRect(-this.size.w / 2 + this.size.w - 20, -this.size.h / 2 + this.size.h - 35, 15, 30);
+
     }
 
     update(delta: number): void {
