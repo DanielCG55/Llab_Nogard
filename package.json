@@ -7,7 +7,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "ghbuild":"vite build --outDir docs --base=/Llab_Nogard"
+        "ghbuild":"vite build --outDir docs --base=/dragon-ball-game"
     },
     "dependencies": {},
     "devDependencies": {
