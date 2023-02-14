@@ -15,7 +15,7 @@ interface InitialGohanProps {
     maxSpeed: number;
 }
 
-const imagesSrc: string = "src/assets/img/";
+const imagesSrc: string = "";
 
 export class Gohan extends Actor {
     // Atributos

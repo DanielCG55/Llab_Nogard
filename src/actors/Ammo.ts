@@ -11,7 +11,6 @@ interface InitialAmmoProps {
     speed?: number;
     gohan: Gohan;
 }
-const imagesSrc: string = "src/assets/img/";
 
 export class Ammo extends Actor {
     size: Size;
@@ -27,7 +26,7 @@ export class Ammo extends Actor {
         this.size = { w: 43, h: 14 };
         this.speed = 5;
         this.image = new Image();
-        this.image.src = imagesSrc + "weapon.png";
+        this.image.src = "weapon.png";
     }
 
     update(delta: number): void {
