@@ -83,25 +83,7 @@ export class CellJr extends Actor {
       this.size.h
     );
 
-    // ctx.translate(this.position.x, this.position.y);
-
-    // ctx.translate(this.position.x, this.position.y);
-    // ctx.rotate(convertAngleToRad(this.angle));
-    // ctx.fillStyle = this.touched ? "pink" : this.color;
-    // ctx.beginPath();
-    // ctx.arc(0, 0, 10, 0, convertAngleToRad(360));
-    // ctx.closePath();
-    // ctx.fill();
-    // ctx.strokeStyle = this.thouching
-    //   ? "green"
-    //   : this.touched && !this.thouching
-    //   ? "pink"
-    //   : this.color;
-    // ctx.beginPath();
-    // ctx.moveTo(-this.barrierLength, 0);
-    // ctx.lineTo(this.barrierLength, 0);
-    // ctx.closePath();
-    // ctx.stroke();
+    
   }
 
   restart(): void {

@@ -85,8 +85,6 @@ export class Gohan extends Actor {
             this.currentImagePosition = (this.currentImagePosition + 1) % 1;
             this.timer = 0;
         }
-
-        
     }
 
     keyboardEventDown(key: string): void {
@@ -120,10 +118,8 @@ export class Gohan extends Actor {
                 this.speed.x = 0;
                 this.shoot();
                 console.log(...this.ammunition);
-    }
-            
         }
-        
+    }
 
     keyboardEventUp(key: string): void {
         switch (key) {
