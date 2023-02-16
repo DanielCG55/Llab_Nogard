@@ -1,7 +1,3 @@
-import { checkLimits } from "../utils/checkLimits";
-import { Point } from "../types/Point";
-import { Size } from "../types/Size";
-import { convertAngleToRad } from "../utils/convertAngleToRad";
 import { Actor } from "./Actor";
 
 export class BackgroundMusic extends Actor {

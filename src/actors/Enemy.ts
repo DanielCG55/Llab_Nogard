@@ -1,4 +1,3 @@
-import { distance } from "../utils/distance";
 import { Point } from "../types/Point";
 import { Size } from "../types/Size";
 import { Actor } from "./Actor";

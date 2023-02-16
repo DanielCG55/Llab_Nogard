@@ -36,6 +36,7 @@ export class Ammo extends Actor {
         this.image.src = "weapon.png";
     }
 
+    //Control the position of player
     update(delta: number): void {
         let newPos: Point = {
             x: this.position.x + this.speed * (delta + 0.5),
@@ -44,9 +45,7 @@ export class Ammo extends Actor {
         this.position = newPos;
 
         // If this bullet is outside canvas, mark it to be deleted
-        if (this.position.x > canvas.width) this.expired =  true;
-       
-       
+        if (this.position.x > canvas.width) this.expired = true;
     }
 
     draw(ctx: CanvasRenderingContext2D, delta: number): void {

@@ -12,8 +12,8 @@ export class Timer extends Actor {
 
     constructor(props: InitialTimerProps) {
         super(props.position);
-        this.elapsed = props.elapsed || 180;
-        if (this.elapsed <= 180) {
+        this.elapsed = props.elapsed || 120;
+        if (this.elapsed <= 121) {
             setTimeout(Timer);
             alert("start the game");
         }

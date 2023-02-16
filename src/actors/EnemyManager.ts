@@ -41,7 +41,7 @@ export class EnemyManager extends Actor {
         };
 
         setInterval(createEnemies, 700);
-        setInterval(() => time--);
+        setInterval(() => time--, 1000);
     }
 
     getEnemyActors() {
@@ -65,6 +65,7 @@ export class EnemyManager extends Actor {
                 ) {
                     a.expired = true;
                     b.expired = true;
+                    this.dead.currentTime = 0;
                     this.dead.play();
                 }
             });
@@ -74,9 +75,11 @@ export class EnemyManager extends Actor {
         //  Comprueba que todos los Enemy han sido tocados
         let countEnemy = 0;
         for (let i = 0; i < this.enemies.length; i++) {
-            if (this.enemies[i].expired) countEnemy++;
+            if (this.enemies[i].expired === true) {
+               if (countEnemy == this.enemies.length) this.completed = true; 
+            }
         }
-        if (countEnemy == this.enemies.length) this.completed = true;
+        
 
         //Only draw alive enemies
         const notExpiredEnemies = this.enemies.filter((a) => {

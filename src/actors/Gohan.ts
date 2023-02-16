@@ -2,7 +2,6 @@ import { checkLimits } from "../utils/checkLimits";
 import { Point } from "../types/Point";
 import { Size } from "../types/Size";
 import { Actor } from "./Actor";
-import { Ammo } from "./Ammo";
 
 interface InitialGohanProps {
     position: Point;
@@ -47,7 +46,6 @@ export class Gohan extends Actor {
         this.hit = new Audio();
         this.hit.src = "shout.ogg";
         this.hit.volume = 1;
-        
     }
     // Métodos
     draw(ctx: CanvasRenderingContext2D, delta: number): void {
@@ -137,6 +135,7 @@ export class Gohan extends Actor {
                 break;
             case " ":
                 this.imagesPosition = [0];
+                this.hit.currentTime = 0;
                 this.hit.play();
                 break;
         }
