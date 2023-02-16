@@ -13,6 +13,10 @@ export class Timer extends Actor {
     constructor(props: InitialTimerProps) {
         super(props.position);
         this.elapsed = props.elapsed || 180;
+        if (this.elapsed <= 180) {
+            setTimeout(Timer);
+            alert("start the game");
+        }
     }
     // Métodos
     draw(ctx: CanvasRenderingContext2D, delta: number): void {
@@ -23,12 +27,5 @@ export class Timer extends Actor {
         ctx.fillStyle = "#000";
         ctx.fillText("Time:", -70, 0);
         ctx.fillText(`${timer.toFixed(1)}`, 40, 0);
-    }
-    keyboardEventDown(key: string): void {
-        switch (key) {
-            case "Enter":
-                this.elapsed = 180;
-                break;
-        }
     }
 }

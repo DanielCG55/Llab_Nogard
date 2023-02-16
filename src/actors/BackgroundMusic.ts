@@ -5,19 +5,18 @@ import { convertAngleToRad } from "../utils/convertAngleToRad";
 import { Actor } from "./Actor";
 
 export class BackgroundMusic extends Actor {
-  // Atributos
-  music: HTMLAudioElement;
+    // Atributos
+    music: HTMLAudioElement;
 
-  constructor() {
-    // Posición inicial del Snake
-    super({ x: 0, y: 0 });
-    this.music = new Audio();
-    this.music.src = "backgroundMusic.mp3";
+    constructor() {
+        super({ x: 0, y: 0 });
+        this.music = new Audio();
+        this.music.src = "backgroundMusic.mp3";
 
-    //Audio Configuration
-    this.music.volume = 0.0;
-    this.music.loop = true;
-    this.music.autoplay = false;
-    this.music.play();
-  }
+        //Audio Configuration
+        this.music.volume = 0.3;
+        this.music.loop = false;
+        this.music.autoplay = true;
+        this.music.play();
+    }
 }

@@ -1,6 +1,10 @@
-# Llab Nogard
-# Mi primer proyecto de [Core Code School](https://www.corecode.school/)
-# Indice:
+# Dragon Ball Game 
+## Mi primer proyecto de [Core Code School](https://www.corecode.school/)
+
+> [Click para fliparlo](https://danielcg55.github.io/dragon-ball-game/)
+
+
+## Indice:
 - [LlabNogard](#Llab Nogard)
 - [Indice:](#indice)
   - [1. Título del Juego:](#1-título-del-juego)
@@ -17,7 +21,7 @@
 
 
 ## 1. Título del Juego:
-Llab Nogard
+dragon-ball-game
 
 ## 2. Imágenes y vídeos:
 ![cellarena](https://user-images.githubusercontent.com/122054483/218276791-e9fd1494-e289-4495-b5f2-d3490c27b70c.png)
@@ -25,13 +29,12 @@ Llab Nogard
 ## 3. Motivación del proyecto:
 Como fan de Dragon Ball desde pequeño, he querido crear este juego a modo de homenaje.
 
-## 4. Acceso directo al juego:
-[Pincha aquí para poder acceder]()
+## 
 
 ## 5. Tabla de contenidos o índice:
 
 ## 6. Manual de instalación y deployment:
-```
+```ts
 Clone the repository:
     git clone https://github.com/DanielCG55/Llab_Nogard.git
 

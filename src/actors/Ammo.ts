@@ -1,74 +1,74 @@
 import { Actor } from "./Actor";
 import { Point } from "../types/Point";
 import { Size } from "../types/Size";
+import { canvas } from "../utils/getCanvas";
 
 interface InitialAmmoProps {
-  position?: Point;
-  speed?: number;
-  player: Actor;
+    position?: Point;
+    speed?: number;
+    player: Actor;
 }
 
 export class Ammo extends Actor {
-  size: Size;
-  distance?: Point;
-  speed: number;
-  image: HTMLImageElement;
-  player: Actor;
-  expired: boolean;
-  id: number;
-  constructor(props: InitialAmmoProps) {
-    super(props.position);
-    this.player = props.player;
-    this.id = parseInt((Math.random() * 10000).toFixed(0));
+    size: Size;
+    distance?: Point;
+    speed: number;
+    image: HTMLImageElement;
+    player: Actor;
+    expired: boolean;
+    id: number;
+    constructor(props: InitialAmmoProps) {
+        super(props.position);
+        this.player = props.player;
+        this.id = parseInt((Math.random() * 10000).toFixed(0));
+        this.expired = false;
 
-    this.expired = false;
+        // Ammo starts at player postition
+        const { x, y } = this.player.position;
+        this.position = { x, y };
 
-    // Ammo starts at player postition
-    const { x, y } = this.player.position;
-    this.position = { x, y };
+        // Ammo size and speed
+        this.size = { w: 43, h: 14 };
+        this.speed = Math.random() * 10 + 5;
 
-    // Ammo size and speed
-    this.size = { w: 43, h: 14 };
-    this.speed = Math.random() * 10 + 5;
-
-    // Sprite
-    this.image = new Image();
-    this.image.src = "weapon.png";
-  }
-
-  update(delta: number): void {
-    let newPos: Point = {
-      x: this.position.x + this.speed * (delta + 0.5),
-      y: this.position.y,
-    };
-    this.position = newPos;
-
-    // If this bullet is outside canvas, mark it to be deleted
-    if (this.position.x > 1000) {
-      this.expired = true;
+        // Sprite
+        this.image = new Image();
+        this.image.src = "weapon.png";
     }
-  }
 
-  draw(ctx: CanvasRenderingContext2D, delta: number): void {
-    ctx.translate(this.position.x, this.position.y);
-    // ctx.fillStyle = "black";
-    // ctx.fillRect(
-    //     -this.size.w / 2,
-    //     -this.size.h / 2,
-    //     this.size.w,
-    //     this.size.h
-    // );
+    update(delta: number): void {
+        let newPos: Point = {
+            x: this.position.x + this.speed * (delta + 0.5),
+            y: this.position.y,
+        };
+        this.position = newPos;
 
-    ctx.drawImage(
-      this.image,
-      0,
-      0,
-      43,
-      14,
-      -this.size.w / 2,
-      -this.size.h / 2,
-      this.size.w,
-      this.size.h
-    );
-  }
+        // If this bullet is outside canvas, mark it to be deleted
+        if (this.position.x > canvas.width) this.expired =  true;
+       
+       
+    }
+
+    draw(ctx: CanvasRenderingContext2D, delta: number): void {
+        ctx.translate(this.position.x, this.position.y);
+        // ctx.fillStyle = "black";
+        // ctx.fillRect(
+        //     -this.size.w / 2,
+        //     -this.size.h / 2,
+        //     this.size.w,
+        //     this.size.h
+        // );
+
+        ctx.drawImage(
+            this.image,
+            0,
+            0,
+            43,
+            14,
+            -this.size.w / 2,
+            -this.size.h / 2,
+            this.size.w,
+            this.size.h
+        );
+    }
 }
