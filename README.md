@@ -41,7 +41,7 @@ Pulsar la tecla "espacio" para disparar.
 
 ```ts
 Clone the repository:
-    git clone https://github.com/DanielCG55/Llab_Nogard.git
+    git clone https://danielcg55.github.io/dragon-ball-game/
 
 Initiate npm:
     npm init
