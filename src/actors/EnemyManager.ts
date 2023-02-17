@@ -40,7 +40,7 @@ export class EnemyManager extends Actor {
             }
         };
 
-        setInterval(createEnemies, 700);
+        setInterval(createEnemies, 1000);
         setInterval(() => time--, 1000);
     }
 
@@ -71,16 +71,6 @@ export class EnemyManager extends Actor {
             });
         });
 
-        //TODO: Para completar el juego
-        //  Comprueba que todos los Enemy han sido tocados
-        let countEnemy = 0;
-        for (let i = 0; i < this.enemies.length; i++) {
-            if (this.enemies[i].expired === true) {
-               if (countEnemy == this.enemies.length) this.completed = true; 
-            }
-        }
-        
-
         //Only draw alive enemies
         const notExpiredEnemies = this.enemies.filter((a) => {
             const enemy = a as Enemy;
@@ -88,6 +78,11 @@ export class EnemyManager extends Actor {
         });
 
         this.enemies = notExpiredEnemies;
+
+        if (notExpiredEnemies.length === 0) {
+            alert("GAME OVER!");
+        
+        }
     }
 
     draw(ctx: CanvasRenderingContext2D, delta: number): void {

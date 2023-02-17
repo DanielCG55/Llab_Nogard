@@ -27,6 +27,7 @@ export class Gohan extends Actor {
     currentYposition: number;
     timer: number;
     maxSpeed: number;
+   
 
     constructor(props: InitialGohanProps) {
         // Posición inicial del Gohan
