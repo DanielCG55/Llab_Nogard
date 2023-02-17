@@ -2,7 +2,7 @@
 
 ## Mi primer proyecto de [Core Code School](https://www.corecode.school/)
 
-> [Click para fliparlo](https://danielcg55.github.io/dragon-ball-game/)
+> [Click para probar el juego](https://danielcg55.github.io/dragon-ball-game/)
 
 ## Indice:
 
