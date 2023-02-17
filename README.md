@@ -95,6 +95,5 @@ Execute the project:
 -   MDN [Api Canvas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API)
 
 ## 10. Agradecimientos:
-Pues los agradecimientos són muy sencillos. Gracias a mi compañera Saray, por siempre prestarme su ayuda. Gracias a Juan Pablo por no rendirse conmigo y gracias a Marc por creer que era capaz de hacerlo. Gracias!
 
-## 11. Otras consideraciones:
+Pues los agradecimientos són muy sencillos. Gracias a mi compañera Saray, por siempre prestarme su ayuda. Gracias a Juan Pablo por no rendirse conmigo y gracias a Marc por creer que era capaz de hacerlo. Gracias!
