@@ -6,7 +6,7 @@
 
 ## Indice:
 
--   # Dragon Ball Game
+-   ## Dragon ball game
 -   [Indice:](#indice)
     -   [1. Título del Juego:](#1-título-del-juego)
     -   [2. Imágenes y vídeos:](#2-imágenes-y-vídeos)
@@ -47,13 +47,13 @@ Initiate npm:
     npm init
 
 Or use this instead:
-    npm init -y
+    npm i yarn
 
 Install dependencies:
-    npm install
+    yarn install, yarn add vite
 
 Execute the project:
-    npm run dev
+    yarn run dev
 
 ```
 
@@ -91,10 +91,9 @@ Execute the project:
 -   To run the HTML: [Vite](https://vitejs.dev/)
 
 -   Lenguajes de programación: [typescript](https://www.npmjs.com/package/typescript)
--   Otros paquetes de Node: [rimraf](https://www.npmjs.com/package/rimraf), [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
+-   [ts-yarn-dev](https://www.npmjs.com/package/ts-yarn-dev)
 -   MDN [Api Canvas](https://developer.mozilla.org/es/docs/Web/API/Canvas_API)
 
 ## 10. Agradecimientos:
-Pues los agradecimientos són muy sencillos. Gracias a mi compañera Saray, por siempre prestarme su ayuda. Gracias a Juan Pablo por no rendirse conmigo y gracias a Marc por creer que era capaz de hacerlo. Gracias!
 
 ## 11. Otras consideraciones:
